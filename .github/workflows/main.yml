@@ -36,7 +36,7 @@ jobs:
         # chmod +x ./ryzen-controller/run.sh
         # ./ryzen-controller/run.sh
         run: |
-          python3 ./ryzen-controller/run.sh
+          python3 ./ryzen-controller/run.py
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
