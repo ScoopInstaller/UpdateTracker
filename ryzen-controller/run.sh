@@ -5,6 +5,8 @@ xml+="<time>$(echo $(TZ=UTC-8 date '+%Y-%m-%d %H:%M:%S'))</time>"
 checkver_url="https://gitlab.com/ryzen-controller-team/ryzen-controller/-/tags?sort=name_desc&format=atom"
 checkver_url_content=$(curl checkver_url)
 
+echo $checkver_url_content
+
 # ryzen-controller/-/tags/2.5.4
 # space between [ and other element is required, 
 # that is, ![condition] --> ERROR; ! [ condition ] --> OK
