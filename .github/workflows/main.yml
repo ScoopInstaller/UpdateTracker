@@ -33,9 +33,10 @@ jobs:
           chmod +x ./googlechrome/run.sh
           ./googlechrome/run.sh
       - name: "ryzen-controller: Run script"
+        # chmod +x ./ryzen-controller/run.sh
+        # ./ryzen-controller/run.sh
         run: |
-          chmod +x ./ryzen-controller/run.sh
-          ./ryzen-controller/run.sh
+          python3 ./ryzen-controller/run.sh
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

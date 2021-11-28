@@ -1,21 +1,31 @@
 
+
 xml="<?xml version=\"1.0\"?>"
 xml+="<time>$(echo $(TZ=UTC-8 date '+%Y-%m-%d %H:%M:%S'))</time>"
 
-checkver_url="https://gitlab.com/ryzen-controller-team/ryzen-controller/-/tags?sort=name_desc&format=atom"
-checkver_url_content=$(curl $checkver_url)
+package_name="ryzen-controller"
+scoop_manifest_url="https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/$package_name.json"
+content=$(curl $scoop_manifest_url)
+scoop_version=$(echo $content | grep -o -P "\"version\":\\s+\"[\\d.]+\"" | grep -o -P "[\\d.]+")
 
-echo $checkver_url_content
-
-# ryzen-controller/-/tags/2.5.4
-# space between [ and other element is required, 
-# that is, ![condition] --> ERROR; ! [ condition ] --> OK
-if ! [ $checkver_url_content =~ "ryzen-controller/-/tags/([\\d.]+)" ]
+# fallback (workaround while the manifest is not merged yet)
+if scoop_version == ""
 then
-    echo "Cannot match regex on checkver_url"
-    exit 1
+    scoop_version="2.5.3"
 fi
-echo $BASH_REMATCH[1]
+
+# The release page is obfuscated with Jscrambler. Therefore some trick is needed to track the version.
+checkver_url="https://gitlab.com/ryzen-controller-team/ryzen-controller/-/tags?sort=name_desc&format=atom"
+content=$(curl $checkver_url)
+release_version=$(echo $content | grep -o -P "ryzen-controller/-/tags/[\\d.]+" | head -1 | grep -o -P "[\\d.]+")
+
+# compare version
+
+
+for i in $(seq 1 10)
+do
+    echo $i
+done
 
 mkdir ./pages/ryzen-controller -p
 echo $xml > ./pages/ryzen-controller/version.xml
