@@ -6,10 +6,11 @@ checkver_page="https://gitlab.com/ryzen-controller-team/ryzen-controller/-/tags?
 checkver_page_content=$(curl $checkver_page)
 
 # ryzen-controller/-/tags/2.5.4
-if [checkver_page !=~ "ryzen-controller/-/tags/([\\d.]+)"] {
+if [checkver_page !=~ "ryzen-controller/-/tags/([\\d.]+)"]
+then
     echo "Cannot match regex on $checkver_page"
     exit 1
-}
+fi
 echo $BASH_REMATCH[1]
 
 mkdir ./pages/ryzen-controller -p
