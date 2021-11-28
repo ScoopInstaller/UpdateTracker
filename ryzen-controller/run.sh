@@ -6,7 +6,7 @@ checkver_url="https://gitlab.com/ryzen-controller-team/ryzen-controller/-/tags?s
 checkver_url_content=$(curl checkver_url)
 
 # ryzen-controller/-/tags/2.5.4
-if [$checkver_url_content !=~ "ryzen-controller/-/tags/([\\d.]+)"]
+if [$checkver_url_content!=~"ryzen-controller/-/tags/([\\d.]+)"]
 then
     echo "Cannot match regex on checkver_url"
     exit 1
