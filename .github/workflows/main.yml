@@ -28,11 +28,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: "googlechrome: Install xmllint"
         run: sudo apt-get install libxml2-utils
-      - name: "googlechrome: Run script"
+      - name: "googlechrome: Run Bash script"
         run: |
           chmod +x ./googlechrome/run.sh
           ./googlechrome/run.sh
-      - name: "ryzen-controller: Run script"
+      - name: "ryzen-controller: Run Python script"
         # chmod +x ./ryzen-controller/run.sh
         # ./ryzen-controller/run.sh
         run: |
