@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: version checks
 
 # Controls when the workflow will run
 on:
@@ -28,25 +28,23 @@ jobs:
       - uses: actions/checkout@v2
       - name: update package manager database
         run: sudo apt-get update
-      - name: Install xmllint
+      - name: "googlechrome: Install xmllint"
         run: sudo apt-get install libxml2-utils
-      - name: Run a multi-line script
+      - name: "googlechrome: Run Bash script"
         run: |
-          chmod +x ./run.sh
-          ./run.sh
+          chmod +x ./googlechrome/run.sh
+          ./googlechrome/run.sh
+      - name: "Python scripts: Install dicttoxml"
+        run: pip3 install dicttoxml
+      - name: "ryzen-controller: Run Python script"
+        # chmod +x ./ryzen-controller/run.sh
+        # ./ryzen-controller/run.sh
+        run: |
+          python3 ./ryzen-controller/run.py
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
           # The folder in your repository that you want to deploy. If your build script compiles into a directory named build you would put it here. Folder paths cannot have a leading / or ./. If you wish to deploy the root directory you can place a . here.
-          folder: ./public/
+          folder: ./pages/
           # If you would like to push the contents of the deployment folder into a specific directory on the deployment branch you can specify it here.
-
-
-
-
-
-
-
-
-
