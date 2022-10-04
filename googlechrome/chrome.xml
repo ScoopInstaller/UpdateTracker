@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <chromechecker>
-  <time>2022-10-03 06:02:14</time>
+  <time>2022-10-04 06:03:52</time>
   <stable32>
     <version>106.0.5249.91</version>
     <download>
@@ -56,21 +56,21 @@
     <size>92424232</size>
   </dev64>
   <canary32>
-    <version>108.0.5336.0</version>
+    <version>108.0.5338.1</version>
     <download>
-      <url>https://108.0.5336.0_chrome_installer.exe</url>
-      <url>https://dl.google.com/release2/chrome/ai5wb5gckh66vtz3pum63ryaka_108.0.5336.0/108.0.5336.0_chrome_installer.exe</url>
+      <url>https://108.0.5338.1_chrome_installer.exe</url>
+      <url>https://dl.google.com/release2/chrome/adquegvzt5wziayphmg67bntf5eq_108.0.5338.1/108.0.5338.1_chrome_installer.exe</url>
     </download>
-    <sha256>9bedc48d39f793c58eb05b2789c8e848b319c8d3ba1a4ec7fd3c3df061362ad0</sha256>
-    <size>88428072</size>
+    <sha256>529d2f5f8a54d47ee0dc1c5947cb4f709ffed502d7bf0ec6bdfb413f9d5bb027</sha256>
+    <size>99362856</size>
   </canary32>
   <canary64>
-    <version>108.0.5336.0</version>
+    <version>108.0.5338.0</version>
     <download>
-      <url>https://108.0.5336.0_chrome_installer.exe</url>
-      <url>https://dl.google.com/release2/chrome/acyxnmbvdyj7v6eqnxgm4trpfgla_108.0.5336.0/108.0.5336.0_chrome_installer.exe</url>
+      <url>https://108.0.5338.0_chrome_installer.exe</url>
+      <url>https://dl.google.com/release2/chrome/acpd2cfsifhjoflw6a4mvjyf2lrq_108.0.5338.0/108.0.5338.0_chrome_installer.exe</url>
     </download>
-    <sha256>9616379664e50ce4489a96af2dbaec6e0bee0e7d627cf185a57fb7f9177dd399</sha256>
-    <size>92878376</size>
+    <sha256>c6ac68bd3a3644cd059b840bce2b1d3383dea18abb11f07540d7156f41d5b5fc</sha256>
+    <size>92865064</size>
   </canary64>
 </chromechecker>
